@@ -39,6 +39,10 @@ MateCode es una startup que desarrolla aplicaciones web para pequeñas empresas.
 ![CERRAR SESION](./docs/logout.png)
 ### MODO OSCURO
 ![MODO OSCURO](./docs/oscuro.png)
+### MOBILE
+![MOBILE](./docs/movil.png)
+### TABLET
+![TABLET](./docs/tablet.png)  
 
 ### Funcionalidades
 
