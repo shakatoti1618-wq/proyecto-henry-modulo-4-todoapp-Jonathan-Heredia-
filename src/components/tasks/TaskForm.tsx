@@ -1,3 +1,4 @@
+import "./TaskForm.css";
 import { useState } from "react";
 
 interface Props {
@@ -10,33 +11,27 @@ function TaskForm({ onAdd }: Props) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-
     if (!title.trim()) return;
-
     await onAdd(title, description);
-
     setTitle("");
     setDescription("");
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Nueva tarea</h2>
-
+    <form onSubmit={handleSubmit} className="task-form">
       <input
         type="text"
         placeholder="Título"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-
       <textarea
         placeholder="Descripción"
+        rows={3}
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-
-      <button type="submit">
+      <button type="submit" className="btn btn-primary">
         Agregar tarea
       </button>
     </form>

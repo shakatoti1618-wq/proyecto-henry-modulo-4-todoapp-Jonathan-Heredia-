@@ -1,0 +1,84 @@
+:root {
+  --bg: #0a0e1a;
+  --bg-elevated: #12172b;
+  --bg-card: #161c34;
+  --border: #262e4d;
+  --text: #e6e9f5;
+  --text-muted: #8a90b3;
+  --accent: #7c5cff;
+  --accent-glow: #7c5cffaa;
+  --accent-2: #00e5ff;
+  --danger: #ff5c7a;
+  --success: #3ddc97;
+  --radius: 14px;
+}
+
+:root[data-theme="light"] {
+  --bg: #f4f6fb;
+  --bg-elevated: #ffffff;
+  --bg-card: #ffffff;
+  --border: #dde2f0;
+  --text: #12172b;
+  --text-muted: #5a6180;
+  --accent: #6a4bff;
+  --accent-glow: #6a4bff55;
+  --accent-2: #0099b3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: radial-gradient(circle at top, #131a33 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.btn:active { transform: scale(0.98); }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+}
+.btn-ghost:hover { border-color: var(--accent-2); color: var(--accent-2); }
+
+.btn-danger {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+
+.empty-state {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 2rem 0;
+}

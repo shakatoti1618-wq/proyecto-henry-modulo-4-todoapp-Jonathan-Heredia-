@@ -1,0 +1,21 @@
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.task-form input,
+.task-form textarea {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  color: var(--text);
+  outline: none;
+  resize: vertical;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+  border-color: var(--accent);
+}

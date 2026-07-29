@@ -1,3 +1,4 @@
+import "./TaskItem.css";
 import type { Task } from "../../types/Task";
 
 interface Props {
@@ -6,38 +7,23 @@ interface Props {
   onToggle: (task: Task) => Promise<void>;
 }
 
-function TaskItem({
-  task,
-  onDelete,
-  onToggle,
-}: Props) {
+function TaskItem({ task, onDelete, onToggle }: Props) {
   return (
-    <article
-      style={{
-        border: "1px solid #ddd",
-        padding: "1rem",
-        marginBottom: "1rem",
-      }}
-    >
+    <article className={`task-item ${task.completed ? "completed" : ""}`}>
       <h3>{task.title}</h3>
-
       <p>{task.description}</p>
-
-      <p>
-        Estado:
-        {" "}
+      <p className={`task-status ${task.completed ? "done" : "pending"}`}>
         {task.completed ? "✅ Completada" : "⏳ Pendiente"}
       </p>
 
-      <button onClick={() => onToggle(task)}>
-        {task.completed
-          ? "Marcar pendiente"
-          : "Completar"}
-      </button>
-
-      <button onClick={() => onDelete(task.id)}>
-        Eliminar
-      </button>
+      <div className="task-actions">
+        <button onClick={() => onToggle(task)} className="btn btn-ghost">
+          {task.completed ? "Marcar pendiente" : "Completar"}
+        </button>
+        <button onClick={() => onDelete(task.id)} className="btn btn-danger">
+          Eliminar
+        </button>
+      </div>
     </article>
   );
 }
